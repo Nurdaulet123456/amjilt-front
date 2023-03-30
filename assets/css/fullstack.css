@@ -1,0 +1,487 @@
+/* Lintro */
+
+.lintro {
+    padding: 15rem 0 8rem;
+    background-color: #f8f9fc;
+    color: #161c2d;
+}
+
+.lintro--html {
+    background-image: url(../img/icons/coding-man.svg), url(../img/icons/bg2.svg);
+    background-repeat: no-repeat;
+    background-position: right 10% bottom, left top;
+    background-size: auto 80%, auto;
+}
+
+.lintro_subtitle {
+    margin-bottom: 1rem;
+    font-size: 2.4rem;
+    font-weight: 300;
+}
+
+.lintro_title {
+    margin-bottom: 3rem;
+    font-size: 5.8rem;
+    line-height: 1.1;
+}
+
+.lintro_text {
+    margin-bottom: 3rem;
+    font-size: 2.1rem;
+    line-height: 1.7;
+    font-weight: 300;
+}
+
+.lintro_info {
+    margin-bottom: 3rem;
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+
+/* Button */
+
+
+.btn {
+    display: inline-block;
+    vertical-align: top;
+    padding: 0.95em 1.25em;
+    position: relative;
+    overflow: hidden;
+    font-family: inherit;
+    font-size: 1.5rem;
+    font-weight: 400;
+    text-decoration: none;
+    line-height: 1;
+    color: #161c2d;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid #d9d9d9;
+    background: transparent;
+    transition: color .3s ease-in-out;
+    z-index: 1;
+}
+
+.btn::before {
+    content: "";
+    display: block;
+    width: 0;
+    height: 100%;
+    background-color: #d9d9d9;
+    position: absolute;
+    top: 0;
+    left: -10%;
+    z-index: 1;
+    -webkit-transform: skew(-20deg);
+    transform: skew(-20deg);
+    transition: width .3s ease-in-out;
+    z-index: -1;
+}
+
+.btn:hover::before {
+    width: 200%;
+}
+
+.btn--md {
+    font-size: 1.8rem;
+}
+
+.btn--full {
+    width: 100%;
+}
+
+.btn--red-fill {
+    color: #fff;
+    border: none;
+    background-color: #de2424;
+}
+
+.btn--red-fill::before {
+    background-color: #ca1e1e;
+}
+
+.btn--red-fill:hover, .btn--red-fill:focus {
+    color: #fff;
+}
+
+.btn:hover, .btn:focus {
+    outline: none;
+    text-decoration: none;
+}
+
+/* Lessons */
+
+.lessons {
+    margin-bottom: 3rem;
+    box-shadow: 0 2px 3px rgba(22, 28, 45, 0.1);
+}
+
+.lessons_header {
+    padding: 2.5rem 7rem 2.5rem 3rem;
+    position: relative;
+    transition: background .2s linear;
+}
+
+.lessons_header[data-collapse] {
+    cursor: pointer;
+}
+
+.lessons_header:hover {
+    background-color: #f8f9fc;
+}
+
+.lessons.active .lessons_header {
+    background-color: #f8f9fc;
+}
+
+.lessons.active .lessons_header::after {
+    border-style: solid;
+    border-width: 0 7px 7px 7px;
+    border-color: transparent transparent #161c2d transparent;
+}
+
+.lessons_header[data-collapse]::after {
+    content: "";
+    display: block;
+    border-style: solid;
+    border-width: 7px 7px 0 7px;
+    border-color: #161c2d transparent transparent transparent;
+    position: absolute;
+    top: 50%;
+    right: 3rem;
+    z-index: 1;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+.lessons_header-title {
+    margin-right: 2rem;
+    font-size: 2.4rem;
+    line-height: 1.2;
+    color: #2f55d4;
+    font-weight: 700;
+}
+
+.lessons_header-duration {
+    font-size: 1.8rem;
+    color: #5B5B5B;
+}
+
+.lessons.active .lessons_content {
+    display: block;
+}
+
+.lessons_content {
+    display: none;
+    padding: 2rem 3rem;
+}
+
+.lessons_list--column {
+    -ms-flex-direction: column;
+    flex-direction: column;
+    counter-reset: none;
+}
+
+.lessons_list {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    counter-reset: lessons;
+    font-size: 1.6rem;
+    color: #5B5B5B;
+}
+
+.lessons_list--column li span {
+    color: #2f55d4;
+}
+
+.lessons_list--column li {
+    width: 100%;
+}
+
+.lessons_list li {
+    padding: 0.5rem 0;
+}
+
+/* Order */
+
+.order {
+    background-color: #2abb39;
+    box-shadow: 0 10px 20px rgba(22, 28, 45, 0.3);
+    color: #fff
+}
+
+.order_header {
+    margin-bottom: 3rem;
+    padding: 3rem 3rem 0;
+}
+
+.order_item {
+    display: block;
+    padding: 2rem 3rem;
+    border-top: 1px dashed #0c8f1a;
+    transition: background .1s linear;
+}
+
+.order_item:hover {
+    background-color: #2e325c;
+}
+
+.order_title {
+    font-size: 4rem;
+}
+
+.order_text {
+    color: #fff;
+    opacity: .8;
+}
+
+.order_item-text {
+    display: block;
+    font-size: 2rem;
+    line-height: 1.4;
+}
+
+.order_item-hint {
+    display: block;
+    margin-top: 1rem;
+    font-size: 1.4rem;
+}
+
+.order_item-price {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    margin-top: 2rem;
+    font-size: 4rem;
+    line-height: 1;
+}
+
+/* FAQ */
+
+.faq_item {
+    margin-bottom: 2rem;
+}
+
+.faq_title {
+    font-size: 2rem;
+}
+
+
+/* Modal */
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2000;
+    padding: 30px 15px;
+    overflow: auto;
+    display: none;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+}
+
+.modal.show {
+    display: block;
+}
+
+.modal__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+}
+
+.modal__content {
+    background-color: #fff;
+    width: 100%;
+    max-width: 400px;
+    padding: 25px;
+    position: relative;
+    opacity: 0;
+    transform: rotate(360deg);
+    transition: transform 0.4s ease-out, opacity 0.4s ease-out;
+    position: relative;
+}
+
+.modal__title {
+    color: #000;
+    display: block;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 10px;
+    position: relative;
+    text-align: left;
+}
+
+.modal__text {
+    color: #000;
+    font-size: 1.4rem;
+    font-weight: 400;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.form-group {
+    background-color: #fff;
+    border: 1px solid #eee;
+    border-radius: 8px;
+    color: rgba(0,0,0,.87);
+    display: block;
+    font-size: 14px;
+    margin: 0 auto 20px;
+    outline: none;
+    padding: 2px 12px;
+    position: relative;
+    transition: .2s ease-out;
+    width: 100%;
+    z-index: 0;
+}
+
+/* Modal Status */
+
+.modal_status {
+    font-weight: 700;
+    margin-block: 10px;
+    font-size: 12px;
+}
+
+.status--green {
+    color: rgb(3, 197, 3);
+}
+
+.status--red {
+    color: red;
+}
+
+.form-group input {
+    width: 100%;
+    color: #757575;
+    font-size: 14px;
+    padding: 10px 0;
+    border: none;
+}
+
+input:focus {
+    outline: none;
+}
+
+.close_btn {
+    border: none;
+    background-color: transparent;
+    position: absolute;
+    top: -30px;
+    right: -35px;
+    cursor: pointer;
+}
+
+.close_btn img {
+    transition: all .2s linear;
+} 
+
+.close_btn:hover img {
+    transform: rotate(45deg);
+}
+
+/* Media */
+
+
+@media(max-width: 767.98px) {
+    .close_btn {
+        border: none;
+        background-color: #ca1e1e;
+        position: absolute;
+        top: 5px;
+        right: 5px;
+        cursor: pointer;
+        padding: 5px;
+    }
+
+    /* Lintro */
+
+    .lintro {
+        padding: 10rem 0 4rem;
+    }
+
+    .lintro--html {
+        background-image: none;
+    }
+
+    .lintro_title {
+        font-size: 3rem;
+    }
+
+    .page {
+        padding-top: 0;
+    }
+
+    /* Lessons */
+
+    .lessons_header {
+        padding: 1.5rem 7rem 1.5rem 2rem;
+    }
+
+    .lessons_header-title {
+        display: block;
+        margin-bottom: 1rem;
+        font-size: 2rem;
+    }
+
+    .lessons_header-duration {
+        display: block;
+        font-size: 1.4rem;
+    }
+
+    .lessons_content {
+        padding: 1rem 2rem;
+    }
+
+    .lessons_row {
+        flex-wrap: wrap;
+    }
+
+    .lessons_list {
+        font-size: 1.4rem;
+    }
+
+    .lessons_list li {
+        width: 100%;
+        padding: 1rem 0;
+    }
+
+    /* Author */
+
+    .row_author {
+        display: block;
+    }
+
+    /* Pay */
+
+    .row_pay {
+        display: block;
+    }
+
+    .offset-xl-1 {
+        margin-left: 0;
+    }
+
+    .order_title {
+        font-size: 2.5rem;
+    }
+
+    .order_item-price {
+        font-size: 2.2rem;
+    }
+
+    .order_item-price .link {
+        font-size: 1.4rem;
+    }
+}
