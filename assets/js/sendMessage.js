@@ -17,6 +17,7 @@ btnSend.addEventListener('click', async (e) => {
         headers: {
             'Content-Type': 'application/json'
         },
+        referrerPolicy: 'no-referrer-when-downgrade',
         body: JSON.stringify(objUser)
     }).then(res => {
         if (res) {
